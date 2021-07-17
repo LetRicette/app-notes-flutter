@@ -1,3 +1,5 @@
+import 'package:bloco_de_notas/components/notes.list.dart';
+import 'package:bloco_de_notas/models/note_model.dart';
 import 'package:bloco_de_notas/src/features/new_note/new_note.dart';
 import 'package:bloco_de_notas/src/shared/constants/app_colors.dart';
 import 'package:bloco_de_notas/src/shared/constants/text_styles.dart';
@@ -12,6 +14,75 @@ class NotesPage extends StatefulWidget {
 }
 
 class _NotesPageState extends State<NotesPage> {
+  final _notes = [
+    Note(
+      id: 'n1',
+      title: 'Não esquecer',
+      text:
+          'Lorem ipsum dolor sit amet, consecter adipiscing elit, sed incididunt ut labore et dolore aliqua.',
+      date: "08/07/21",
+      favorite: true,
+      attachment: true,
+      deadline: "08/02/21",
+      color: 'rosa',
+    ),
+    Note(
+      id: 'n2',
+      title: 'Reunião com os stakeholders',
+      text:
+          'Ipsum dolor sit amet, consectur. Adipiscing elit, sed do eiusmod tempor incidi. Ut labore et dolore magna aliqua.',
+      date: "07/07/21",
+      favorite: false,
+      attachment: true,
+      deadline: "08/02/21",
+      color: 'verde',
+    ),
+    Note(
+      id: 'n3',
+      title: 'Lembretes para o médico',
+      text:
+          'Lorem ipsum dolor sit amet, consecter adipiscing elit, sed incididunt ut labore et dolore aliqua.',
+      date: "06/07/21",
+      favorite: true,
+      attachment: true,
+      deadline: "08/02/21",
+      color: 'roxo',
+    ),
+    Note(
+      id: 'n4',
+      title: 'Ideias para o novo app 2022',
+      text:
+          'Ipsum dolor sit amet, consectur. Adipiscing elit, sed do eiusmod tempor incidi. Ut labore et dolore magna aliqua.',
+      date: "06/07/21",
+      favorite: false,
+      attachment: false,
+      deadline: "08/02/21",
+      color: 'ciano',
+    ),
+    Note(
+      id: 'n5',
+      title: 'Reunião do grupo de treinamento',
+      text:
+          'Lorem ipsum dolor sit amet, consecter adipiscing elit, sed incididunt ut labore et dolore aliqua.',
+      date: "04/07/21",
+      favorite: true,
+      attachment: false,
+      deadline: "08/02/21",
+      color: 'pink',
+    ),
+    Note(
+      id: 'n6',
+      title: 'Estudar!!',
+      text:
+          'Lorem ipsum dolor sit amet, consecter adipiscing elit, sed incididunt ut labore et dolore aliqua.',
+      date: "02/07/21",
+      favorite: true,
+      attachment: true,
+      deadline: "08/02/21",
+      color: 'pink',
+    )
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,137 +129,7 @@ class _NotesPageState extends State<NotesPage> {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 80, left: 16),
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.90,
-              height: MediaQuery.of(context).size.height * 0.80,
-              child: RawScrollbar(
-                isAlwaysShown: true,
-                thumbColor: Colors.blueGrey.shade100,
-                radius: Radius.circular(20),
-                thickness: 9,
-                child: StaggeredGridView.countBuilder(
-                  crossAxisCount: 2,
-                  itemCount: 6,
-                  itemBuilder: (BuildContext context, int index) => Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 38),
-                        child: Container(
-                          width: 160,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border.all(color: Colors.grey.shade50),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black45.withOpacity(0.3),
-                                spreadRadius: 0.5,
-                                blurRadius: 10,
-                                offset:
-                                    Offset(0, 5), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                child: Text(
-                                  "Título muito tituloso",
-                                  style: TextStyles.white16w700Roboto,
-                                ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(),
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.date_range,
-                                      color: Colors.black.withOpacity(0.54),
-                                      size: 16,
-                                    ),
-                                  ),
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(),
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.attach_file_outlined,
-                                      color: Colors.black.withOpacity(0.54),
-                                      size: 16,
-                                    ),
-                                  ),
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(),
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.favorite,
-                                      color: Colors.black.withOpacity(0.54),
-                                      size: 16,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 8.0, right: 8, top: 4),
-                                child: Container(
-                                  child: Text(
-                                    "Lorem ipsum dolor sit amet, consecter adipiscing elit, sed incididunt ut labore et dolore aliqua.",
-                                    style: TextStyles.w400Roboto,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 8.0, bottom: 10, left: 8),
-                                child: Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Text(
-                                    "Criação: 05/07/21",
-                                    style: TextStyles.w300Roboto,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 160,
-                        decoration: BoxDecoration(
-                          color: Colors.pink,
-                          borderRadius: BorderRadius.circular(5),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black45.withOpacity(0.3),
-                              spreadRadius: 0.5,
-                              blurRadius: 5,
-                              offset:
-                                  Offset(0, 5), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 8, left: 8, right: 8, bottom: 6),
-                          child: Text(
-                            "Título muito tituloso",
-                            style: TextStyles.white16w700Roboto,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  staggeredTileBuilder: (int index) => StaggeredTile.fit(1),
-                  mainAxisSpacing: 16,
-                ),
-              ),
-            ),
+            child: NotesList(_notes),
           ),
         ],
       ),
