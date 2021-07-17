@@ -1,16 +1,22 @@
-# bloco_de_notas
+# **Assignments - LevelUp 4
 
-A new Flutter project.
+######                                  											:calling:	Raro Academy - Flutter  :calling:
 
-## Getting Started
+<img src=".\Android-Emulator-Pixel_2_API_30_5554-2021-07-17-18-24-30.gif" style="zoom:45%;" /><img src=".\217374538_864955477455723_392855093344165984_n.png" alt="217374538_864955477455723_392855093344165984_n" style="zoom:65%;" />
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Aplicativo de notas com Layout de acordo com o Figma.
+Inclusão de navegação e botão que aparece de acordo com a quantidade de texto digitada no TextField.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+Cards de notas geradas com o StaggeredGrid, porém não consegui passar a lista de notas para gerar elas diferentes, então o app está com estático apenas com a configuração padrão para a geração das notas e inclusão das  mesmas.
+
+
+
+
+
+
+
+Aplicação no emulador android- Pixel 2.

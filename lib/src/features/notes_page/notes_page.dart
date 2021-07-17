@@ -2,9 +2,8 @@ import 'package:bloco_de_notas/components/notes.list.dart';
 import 'package:bloco_de_notas/models/note_model.dart';
 import 'package:bloco_de_notas/src/features/new_note/new_note.dart';
 import 'package:bloco_de_notas/src/shared/constants/app_colors.dart';
-import 'package:bloco_de_notas/src/shared/constants/text_styles.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class NotesPage extends StatefulWidget {
   NotesPage({Key? key}) : super(key: key);
